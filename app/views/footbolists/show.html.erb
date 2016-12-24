@@ -1,0 +1,31 @@
+<div class="parents_block">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <%= image_tag @footbolist.image.url, height: '120', width: '120' %>
+  </p>
+
+
+  <p>
+    <strong>Name:</strong>
+    <%= @footbolist.name %>
+  </p>
+
+  <p>
+    <strong>Second name:</strong>
+    <%= @footbolist.second_name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @footbolist.description %>
+  </p>
+
+  <p>
+    <strong>Club:</strong>
+    <%= @footbolist.club %>
+  </p>
+
+  <%= link_to 'Edit', edit_footbolist_path(@footbolist) %> |
+  <%= link_to 'Back', footbolists_path %>
+
+</div>

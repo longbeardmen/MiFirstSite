@@ -1,0 +1,39 @@
+<div class="parents_block">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Listing Footbolists</h1>
+
+  <table>
+    <thead>
+      <tr class="row">
+        <th class="col-md-1">Image</th>
+        <th class="col-md-1">Name</th>
+        <th class="col-md-2">Second name</th>
+        <th class="col-md-3" colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @footbolists.each do |footbolist| %>
+          <tr class="row">
+              <td class="col-md-1"><%= image_tag footbolist.image.url, height: '32', width: '32' %></td>
+
+              <td class="col-md-1"><%= footbolist.name %></td>
+
+              <td class="col-md-2"><%= footbolist.second_name %></td>
+
+
+              <td class="col-md-1"><%= link_to 'Show', footbolist, class: 'btn btn-success' %></td>
+
+              <td class="col-md-1"><%= link_to 'Edit', edit_footbolist_path(footbolist), class: 'btn btn-default', type: 'button' %></td>
+
+              <td class="col-md-1"><%= link_to 'Destroy', footbolist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', type: 'button' %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <%= link_to 'New Footbolist', new_footbolist_path %>
+
+</div>

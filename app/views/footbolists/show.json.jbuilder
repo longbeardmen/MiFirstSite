@@ -1,0 +1,1 @@
+json.partial! "footbolists/footbolist", footbolist: @footbolist

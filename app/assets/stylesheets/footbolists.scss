@@ -1,0 +1,25 @@
+// Place all the styles related to the footbolists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.parents_block {
+  margin: 5%;
+}
+
+.object-fit_contain {
+  object-fit: cover;
+}
+
+/* resize images */
+.item img {
+  max-height: 200px;
+  width: auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
