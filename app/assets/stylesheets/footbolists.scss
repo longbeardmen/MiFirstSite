@@ -4,18 +4,58 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.parents_block {
-  margin: 5%;
+.header {
+    font-family: 'Fix Sans';
+    background-color: #fff;
+    min-height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    overflow: scroll;
+}
+
+.fon
+{
+  font-family: 'Fix Sans';
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: scroll;
+}
+.prozra
+{
+  background-color: transparent;
+}
+
+.parents_block
+{
+  background-color: #888;
+  color: #000;
+}
+
+.main_table
+{
+  border: 100px;
+  padding: 10px;
+  spacing: 10px;
 }
 
 .object-fit_contain {
   object-fit: cover;
 }
-
+.message,.title
+{
+  width: 100%;
+}
 /* resize images */
-.item img {
-  max-height: 200px;
-  width: auto;
+img.item_img {
+  min-height: 500px;
+  max-height: 500px;
 }
 
 html, body {

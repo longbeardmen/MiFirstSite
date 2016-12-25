@@ -1,13 +1,12 @@
-<div class="parents_block">
-  <%= link_to "Show all", footbolists_path, class: 'btn btn-success'%>
-
-
-
+<div class="">
+    <%= link_to "Show all Footbolist", footbolists_path, class: 'btn btn-success'%>
+</div>
+<div class="parents_block row">
     <!-- Wrapper for slides -->
       <%if @photos_info.size < 1%>
         <p>no photos</p>
       <%else%>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div id="carousel-example-generic" class="carousel slide col-md-8 " data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -15,22 +14,21 @@
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-
-          <div class="item active">
-            <%= image_tag @photos_info.first[:url], class: 'displayed object-fit_contain', width: 'auto', height: '90%' %>
+          <div class="active item">
+            <%= image_tag @photos_info.first[:url], class: 'displayed object-fit_contain item_img col-md-8'%>
             <div class="carousel-caption">
               <%= @photos_info.first[:name] %>
             </div>
           </div>
           <% @photos_info.drop(1).each do |item| %>
               <div class="item">
-                <%= image_tag item[:url], class: 'object-fit_contain', width: 'auto', height: '90%' %>
+                <%= image_tag item[:url], class: 'object-fit_contain item_img col-md-8' %>
                 <div class="carousel-caption">
                   <%= item[:name] %>
                 </div>
               </div>
           <% end %>
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <a class="left carousel-control " href="#carousel-example-generic" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
@@ -44,22 +42,21 @@
 
     <!-- Controls -->
 
+    <p id="notice"><%= notice %></p>
 
-  <div id="comment_wall">
-    <%= form_for WallComment.new, remote:true do |f|%>
-      <div class="field">
-        <%= f.label  :title %>
-        <%= f.text_field :title %>
+  <div id="comment_wall" class='col-md-4'>
+    <%= form_for WallComment.new, remote: true do |f|%>
+      <div class="field ">
+        <%= f.text_field :title,placeholder:'title',class:'title' %>
       </div>
-      <div class="field">
-        <%= f.label :message %>
-        <%= f.text_area :message %>
+      <div class="field ">
+        <%= f.text_area :message,placeholder:'message',class:'message' %>
       </div>
       <%= f.submit  %>
     <% end %>
 
     <div class="comments">
-      <% WallComment.all.each do |comment| %>
+      <% @comments.each do |comment| %>
         <p>
           title: <%= comment.title %>
         </p>

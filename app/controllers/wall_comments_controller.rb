@@ -8,10 +8,12 @@ class WallCommentsController < ApplicationController
   end
 
   def create
-    WallComment.create(wall_comment_params)
-    redirect_to :root
+      @comment = WallComment.create(wall_comment_params)
+    respond_to do |format|
+      format.html { redirect_to :root, notice: 'Comment was successfully created.' }
+    end
   end
-
+  
   private
 
   def wall_comment_params

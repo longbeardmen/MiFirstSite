@@ -31,7 +31,7 @@ class FootbolistsController < ApplicationController
         format.html { redirect_to @footbolist, notice: 'Footbolist was successfully created.' }
         format.json { render :show, status: :created, location: @footbolist }
       else
-        format.html { render :new }
+        format.html { render :new,notice: 'Pustie polya, bratan.'}
         format.json { render json: @footbolist.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class FootbolistsController < ApplicationController
         format.html { redirect_to @footbolist, notice: 'Footbolist was successfully updated.' }
         format.json { render :show, status: :ok, location: @footbolist }
       else
-        format.html { render :edit }
+        format.html { render :edit,notice: 'Pustie polya, bratan.'}
         format.json { render json: @footbolist.errors, status: :unprocessable_entity }
       end
     end
