@@ -1,17 +1,15 @@
 <div class='fon'>
   <div class='header'>
-      <h1><center>Footbolists DB</center></h1>
+      <h1><center>Footbal Players DB</center></h1>
+        <div class='btn-group fon'>
+          <%= link_to "Home Page", root_path, class: 'btn btn-default col-md-6'%>
+          <%= link_to 'New Footbolist', new_footbolist_path, class: 'btn btn-default col-md-offset-6 col-md-6' %>
+        </div>
   </div>
 
-  <div class="fon">
+  <div class="fon post_header">
     <p id="notice"><%= notice %></p>
-
-
-          <div class="btn btn-default btn-block">
-            <%= link_to 'New Footbolist', new_footbolist_path %>
-          </div>
-
-    <table class="main_table">
+    <table class="main_table col-md-12">
       <thead>
         <tr class="row">
           <th class="col-md-3">Image</th>
@@ -20,7 +18,6 @@
           <th class="col-md-3" colspan="3"></th>
         </tr>
       </thead>
-
       <tbody>
         <% @footbolists.each do |footbolist| %>
             <tr class="row">

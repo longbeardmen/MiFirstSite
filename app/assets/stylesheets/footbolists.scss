@@ -6,15 +6,14 @@
 
 .header {
     font-family: 'Fix Sans';
-    background-color: #fff;
+    background-color: #3f0;
     min-height: 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 99;
-    overflow: scroll;
 }
 
 .fon
@@ -25,8 +24,23 @@
   left: 0;
   right: 0;
   width: 100%;
-  overflow: scroll;
+  overflow-y: hidden;
 }
+
+.comments
+{
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  max-height: 400px;
+}
+
+.post_header
+{
+  margin-top: 100px;
+}
+
 .prozra
 {
   background-color: transparent;
@@ -34,7 +48,7 @@
 
 .parents_block
 {
-  background-color: #888;
+  background-color: #eee;
   color: #000;
 }
 
@@ -54,6 +68,8 @@
 }
 /* resize images */
 img.item_img {
+  margin-left: auto;
+  margin-right: auto;
   min-height: 500px;
   max-height: 500px;
 }

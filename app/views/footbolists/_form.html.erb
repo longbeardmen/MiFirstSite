@@ -13,11 +13,10 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+    <%= f.text_field :name, pattern: '[А-ЯЁ][а-яё\s]{1,30}' %>  </div>
   <div class="field">
     <%= f.label :second_name %><br>
-    <%= f.text_field :second_name %>
+    <%= f.text_field :second_name, pattern: '[А-ЯЁ][а-яё\s]{1,30}' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

@@ -1,12 +1,17 @@
-<div class="">
-    <%= link_to "Show all Footbolist", footbolists_path, class: 'btn btn-success'%>
+<div class="fon">
+  <div class='header'>
+      <h1><center>Footbal Players DB</center></h1>
+        <%= link_to "Show all Footbolist", footbolists_path, class: 'btn btn-default btn-block'%>
+  </div>
+
+
 </div>
-<div class="parents_block row">
+<div class="parents_block row post_header">
     <!-- Wrapper for slides -->
       <%if @photos_info.size < 1%>
         <p>no photos</p>
       <%else%>
-      <div id="carousel-example-generic" class="carousel slide col-md-8 " data-ride="carousel">
+      <div id="carousel-example-generic" class="carousel slide col-md-offset-1 col-md-6 " data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -15,14 +20,14 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="active item">
-            <%= image_tag @photos_info.first[:url], class: 'displayed object-fit_contain item_img col-md-8'%>
+            <%= image_tag @photos_info.first[:url], class: 'displayed object-fit_contain item_img col-md-12'%>
             <div class="carousel-caption">
               <%= @photos_info.first[:name] %>
             </div>
           </div>
           <% @photos_info.drop(1).each do |item| %>
               <div class="item">
-                <%= image_tag item[:url], class: 'object-fit_contain item_img col-md-8' %>
+                <%= image_tag item[:url], class: 'object-fit_contain item_img col-md-12' %>
                 <div class="carousel-caption">
                   <%= item[:name] %>
                 </div>
@@ -44,27 +49,30 @@
 
     <p id="notice"><%= notice %></p>
 
-  <div id="comment_wall" class='col-md-4'>
-    <%= form_for WallComment.new, remote: true do |f|%>
-      <div class="field ">
-        <%= f.text_field :title,placeholder:'title',class:'title' %>
-      </div>
-      <div class="field ">
-        <%= f.text_area :message,placeholder:'message',class:'message' %>
-      </div>
-      <%= f.submit  %>
-    <% end %>
-
-    <div class="comments">
-      <% @comments.each do |comment| %>
-        <p>
-          title: <%= comment.title %>
-        </p>
-        <p>
-          message: <%= comment.message %>
-        </p>
-        <hr>
+  <div id="comment_wall" class='col-md-offset-1 col-md-3'>
+    <div class=' col-md-offset-2 col-md-8'>
+      <%= form_for WallComment.new, remote: true do |f|%>
+        <div class="field ">
+          <%= f.text_field :title,placeholder:'Nickname...',class:'title' %>
+        </div>
+        <div class="field ">
+          <%= f.text_field :message,placeholder:'Message...',class:'message' %>
+        </div>
+        <%= f.submit  %>
       <% end %>
+    </div>
+    <div class="fon">
+      <div class="comments">
+        <% @comments.each do |comment| %>
+          <p>
+            <b>Пользователь:</b> <%= comment.title %>
+          </p>
+          <p>
+            <b>Сообщение:</b>    <%= comment.message %>
+          </p>
+          <hr>
+        <% end %>
+      </div>
     </div>
   </div>
 
