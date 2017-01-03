@@ -8,12 +8,13 @@ class WallCommentsController < ApplicationController
   end
 
   def create
-      @comment = WallComment.create(wall_comment_params)
+    @comment = WallComment.create(wall_comment_params)
     respond_to do |format|
       format.html { redirect_to :root, notice: 'Comment was successfully created.' }
+      CommentsMailer.welcome_email(wall_comment_params[:title]).deliver_later
     end
   end
-  
+
   private
 
   def wall_comment_params
